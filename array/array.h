@@ -1,5 +1,7 @@
 //array.h
 
+#include <iterator>
+
 #ifndef __ARRAY_H_INCLUDED__   // if array.h hasn't been included yet...
 #define __ARRAY_H_INCLUDED__   //   #define this so the compiler knows it has been included
 
@@ -21,11 +23,11 @@ class ARRAY {
 		int size;
 
 	public:
-		class MyIterator : public std::iterator<std::input_iterator_tag, int>
+		class MyIterator
 			{
 			  int* p;
 			public:
-			  MyIterator(int* x) :p(x) {}
+			  MyIterator(ARRAY *x) :p(x->arr) {}
 			  MyIterator(const MyIterator& mit) : p(mit.p) {}
 			  MyIterator& operator++() {++p;return *this;}
 			  MyIterator operator++(int) {MyIterator tmp(*this); operator++(); return tmp;}

@@ -11,6 +11,18 @@ int main(){
 	cout << "front of the array: " << my_arr.front() << endl;
 	cout << "back of the array: " << my_arr.back() << endl;
 
-	MyIterator iter(my_arr);
+	ARRAY::MyIterator iter(&my_arr);
+	iter++;
+
+	ARRAY::MyIterator iter1(&my_arr);
+	iter1++;
+	// iter1++;
+
+	if(iter1 == iter){
+		cout << "yes same iter." << endl;
+	}
+	else{
+		cout << "nope" << endl;
+	}
 	cout <<  *iter << endl;
 }

@@ -11,9 +11,6 @@ ARRAY::ARRAY(){
 	}
 }
 ARRAY::ARRAY(int init_size){
-	// cout << "custom constructor" << endl;
-	// cout << init_size << endl;
-
 	size = init_size;
 	arr = new int[size];
 	for(int i=0; i<size; i++){
